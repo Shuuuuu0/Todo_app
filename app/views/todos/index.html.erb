@@ -1,13 +1,16 @@
-<h1>Todo一覧</h1>
+<h1 class="text-3xl font-bold mb-4">Todo一覧</h1>
 
-<%= link_to '新しいTodoを作成', new_todo_path %>
+<%= link_to '新しいTodoを作成', new_todo_path, class: 'btn' %>
 
-<ul>
-  <% @todos.each do |todo| %> 
-    <li>
-      <%= link_to todo.title, todo_path(todo) %>
-      <%= link_to '編集', edit_todo_path(todo) %> |
-      <%= link_to '削除', todo_path(todo), method: :delete, data: { confirm: '本当に削除しますか?' } %>
+<ul class="todo-list">
+  <% @todos.each do |todo| %>
+    <li class="todo-item">
+      <%= form_with model: todo, url: todo_path(todo), method: :delete, local: true, data: { controller: "todo" } do |form| %>
+        <%= form.check_box :completed, checked: todo.completed, data: { target: "todo.checkbox" } %>
+        <%= form.label :completed, class: 'todo-title' do %>
+          <%= link_to todo.title, todo_path(todo) %>
+        <% end %>
+      <% end %>
     </li>
   <% end %>
 </ul>

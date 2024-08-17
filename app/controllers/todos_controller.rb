@@ -39,13 +39,17 @@ class TodosController < ApplicationController
         render :edit
       end
     end      
+    
 
-    #DELETE /todos/1
-    def destroy
-      @todo = Todo.find(params[:id])
-      @todo.destroy
-      redirect_to todos_url, notice: '削除しました'    #indexに自動的に飛ぶ
-    end    
+def destroy
+  @todo = Todo.find(params[:id])
+  @todo.destroy
+  respond_to do |format|
+    format.html { redirect_to todos_url, notice: '削除しました' }
+    format.js   # JavaScript形式でレスポンスを返す場合の設定
+  end
+end
+
 
     private  #ストロングパラメーター
     def todo_params
