@@ -1,5 +1,5 @@
 <h1><%= @todo.title %></h1>
-<p>完了: <%= @todo.completed ? 'はい' : 'いいえ' %></p>
+<p>完了: <%= @todo.completed ? 'タスクは完了しました!' : 'まだタスクが残ってる' %></p>
 
 <%= link_to '戻る', todos_path %>
 <%= link_to '編集', edit_todo_path(@todo) %>

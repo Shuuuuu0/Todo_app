@@ -1,15 +1,92 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.notice {
+    color: green;
+    background-color: #e0ffe0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .alert {
+    color: red;
+    background-color: #ffe0e0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* application.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8;
+}
+
+h1 {
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #3490dc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2779bd;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-title {
+  font-size: 16px;
+  color: #333;
+}
+
+.todo-actions .btn {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.btn-edit {
+  background-color: #38c172;
+}
+
+.btn-edit:hover {
+  background-color: #2d995b;
+}
+
+.btn-delete {
+  background-color: #e3342f;
+}
+
+.btn-delete:hover {
+  background-color: #cc1f1a;
+}
+
+/* application.css */
+
+.todo-item {
+  display: flex;
+  align-items: center;
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+}
